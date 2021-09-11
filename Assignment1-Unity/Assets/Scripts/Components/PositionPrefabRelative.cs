@@ -17,16 +17,16 @@ public class PositionPrefabRelative : MonoBehaviour
 
     void Update() 
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            Instantiate(Prefab, this.transform.position - SpawnOffset, Quaternion.identity);
-        }
+       
     }
 
     public GameObject PositionPrefabAtRelativePosition()
     {
-        
-        return null;
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            Instantiate(Prefab, this.transform.position - SpawnOffset, Quaternion.identity);
+        }
+        return Prefab;
     }
     
 }

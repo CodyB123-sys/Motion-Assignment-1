@@ -4,9 +4,13 @@ using System.Collections;
 public class VectorToEnemy : MonoBehaviour
 {
 
+
     public GameObject enemy;
     Vector3 playerPos;
     Vector3 enemyPos;
+    //float dist;
+    float xDist;
+    float yDist;
 
     /// <summary>
     /// Calculated vector from the player to enemy found by GameManager.GetEnemyObject
@@ -19,12 +23,16 @@ public class VectorToEnemy : MonoBehaviour
     {
         playerPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         enemyPos = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z);
+
+        xDist = this.transform.position.x - enemy.transform.position.x;
+        yDist = this.transform.position.y - enemy.transform.position.y;
     }
 
     public Vector3 GetVectorToEnemy()
     {
-
-        return Vector3.zero;
+       
+        return enemyPos + playerPos;
+        
     }
 
     /// <summary>
@@ -34,7 +42,7 @@ public class VectorToEnemy : MonoBehaviour
     /// <returns>The scalar distance between the player and the enemy</returns>
     public float GetDistanceToEnemy()
     {
-        return 0;
+        return Mathf.Sqrt(xDist * xDist + yDist * yDist);
     }
     
 }
