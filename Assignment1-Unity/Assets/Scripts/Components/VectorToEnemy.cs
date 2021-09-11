@@ -31,7 +31,8 @@ public class VectorToEnemy : MonoBehaviour
     public Vector3 GetVectorToEnemy()
     {
        
-        return enemyPos + playerPos;
+            return enemyPos + playerPos;
+        
         
     }
 

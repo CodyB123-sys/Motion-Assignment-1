@@ -14,6 +14,7 @@ public class BombLine : MonoBehaviour
     /// <returns>An array containing all the bomb objects</returns>
     public GameObject[] SpawnBombs()
     {
+
         return null;
     }
     
