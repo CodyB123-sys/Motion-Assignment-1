@@ -11,6 +11,7 @@ public class VectorToEnemy : MonoBehaviour
     //float dist;
     float xDist;
     float yDist;
+    float f;
 
     /// <summary>
     /// Calculated vector from the player to enemy found by GameManager.GetEnemyObject
@@ -28,10 +29,16 @@ public class VectorToEnemy : MonoBehaviour
         yDist = this.transform.position.y - enemy.transform.position.y;
     }
 
+    void Update() 
+    {
+        Debug.Log(playerPos - enemyPos);
+    }
+    
+
     public Vector3 GetVectorToEnemy()
     {
        
-            return enemyPos + playerPos;
+            return playerPos - enemyPos;
         
         
     }
@@ -43,7 +50,7 @@ public class VectorToEnemy : MonoBehaviour
     /// <returns>The scalar distance between the player and the enemy</returns>
     public float GetDistanceToEnemy()
     {
-        return Mathf.Sqrt((xDist * xDist) + (yDist * yDist));
+        return f = Mathf.Sqrt((xDist * xDist) + (yDist * yDist));
     }
     
 }
