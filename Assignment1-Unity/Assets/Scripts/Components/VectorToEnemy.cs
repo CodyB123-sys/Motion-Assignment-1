@@ -43,7 +43,7 @@ public class VectorToEnemy : MonoBehaviour
     /// <returns>The scalar distance between the player and the enemy</returns>
     public float GetDistanceToEnemy()
     {
-        return Mathf.Sqrt(xDist * xDist + yDist * yDist);
+        return Mathf.Sqrt((xDist * xDist) + (yDist * yDist));
     }
     
 }
