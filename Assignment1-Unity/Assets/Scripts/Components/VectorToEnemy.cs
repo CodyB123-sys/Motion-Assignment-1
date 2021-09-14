@@ -36,11 +36,10 @@ public class VectorToEnemy : MonoBehaviour
     {
         playerPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         enemyPos = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z);
-        if (Input.GetKeyDown(KeyCode.V))
-        {
-            Debug.DrawLine(enemyPos, playerPos, Color.red, 2.5f);
-            Debug.Log(playerPos - enemyPos);
-        }
+        
+        Debug.DrawLine(enemyPos, playerPos, Color.red, 2.5f);
+        Debug.Log(playerPos - enemyPos);
+        
             return playerPos - enemyPos;
         
         
@@ -55,11 +54,10 @@ public class VectorToEnemy : MonoBehaviour
     {
         xDist = this.transform.position.x - enemy.transform.position.x;
         yDist = this.transform.position.y - enemy.transform.position.y;
-        if (Input.GetKeyDown(KeyCode.D))
-        {
-            Debug.Log(f);
+        
+        Debug.Log(f);
 
-        }
+        
         return f = Mathf.Sqrt((xDist * xDist) + (yDist * yDist));
     }
     

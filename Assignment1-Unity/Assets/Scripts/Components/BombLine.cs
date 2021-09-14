@@ -14,11 +14,15 @@ public class BombLine : MonoBehaviour
     /// <returns>An array containing all the bomb objects</returns>
     public GameObject[] SpawnBombs()
     {
-        /*for (int i = 0; i < BombCount; i++)
+        GameObject[] bombs = new GameObject[BombCount];
+        for (int i = 0; i < BombCount; i++)
         {
-            Instantiate(BombPrefab, new Vector3(i - (BombCount - BombSpacing), 0);
-        }*/
-        return null;
+            GameObject spawnedBomb;
+            spawnedBomb = Instantiate(BombPrefab, this.transform.position - (transform.up * ((i + 1) * BombSpacing)), Quaternion.identity);
+            bombs[i] = spawnedBomb;
+            Debug.Log(bombs[i].name);
+        }
+        return bombs;
     }
     
 }

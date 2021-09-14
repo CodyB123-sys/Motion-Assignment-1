@@ -22,10 +22,10 @@ public class PositionPrefabRelative : MonoBehaviour
 
     public GameObject PositionPrefabAtRelativePosition()
     {
-        if (Input.GetKeyDown(KeyCode.O))
-        {
-            Instantiate(Prefab, this.transform.position - SpawnOffset, Quaternion.identity);
-        }
+       
+        
+        Instantiate(Prefab, this.transform.position - SpawnOffset, Quaternion.identity);
+        
         return Prefab;
     }
     

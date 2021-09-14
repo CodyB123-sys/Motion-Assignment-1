@@ -366,5 +366,10 @@ PrefabInstance:
       propertyPath: SpawnOffset.z
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 114852366303261144, guid: abc125f00ae369940b2c5c0275186637,
+        type: 3}
+      propertyPath: BombSpacing
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: abc125f00ae369940b2c5c0275186637, type: 3}
