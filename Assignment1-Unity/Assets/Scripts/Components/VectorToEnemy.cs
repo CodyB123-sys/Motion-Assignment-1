@@ -20,24 +20,27 @@ public class VectorToEnemy : MonoBehaviour
     /// <returns>The vector from the player to the enemy.</returns>
     /// 
 
-    void Start() 
-    {
-        playerPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
-        enemyPos = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z);
 
-        xDist = this.transform.position.x - enemy.transform.position.x;
-        yDist = this.transform.position.y - enemy.transform.position.y;
+
+    void Start()
+    {
+        
+
+       
     }
 
-    void Update() 
-    {
-        Debug.Log(playerPos - enemyPos);
-    }
+  
     
 
     public Vector3 GetVectorToEnemy()
     {
-       
+        playerPos = new Vector3(this.transform.position.x, this.transform.position.y, this.transform.position.z);
+        enemyPos = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z);
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            Debug.DrawLine(enemyPos, playerPos, Color.red, 2.5f);
+            Debug.Log(playerPos - enemyPos);
+        }
             return playerPos - enemyPos;
         
         
@@ -50,6 +53,13 @@ public class VectorToEnemy : MonoBehaviour
     /// <returns>The scalar distance between the player and the enemy</returns>
     public float GetDistanceToEnemy()
     {
+        xDist = this.transform.position.x - enemy.transform.position.x;
+        yDist = this.transform.position.y - enemy.transform.position.y;
+        if (Input.GetKeyDown(KeyCode.D))
+        {
+            Debug.Log(f);
+
+        }
         return f = Mathf.Sqrt((xDist * xDist) + (yDist * yDist));
     }
     

@@ -14,7 +14,10 @@ public class BombLine : MonoBehaviour
     /// <returns>An array containing all the bomb objects</returns>
     public GameObject[] SpawnBombs()
     {
-
+        /*for (int i = 0; i < BombCount; i++)
+        {
+            Instantiate(BombPrefab, new Vector3(i - (BombCount - BombSpacing), 0);
+        }*/
         return null;
     }
     
