@@ -6,7 +6,6 @@ public class PositionPrefabRelative : MonoBehaviour
 {
     public GameObject Prefab;
     public Vector3 SpawnOffset;
-    
 
     /// <summary>
     /// Instantiates the game object stored in the variable Prefab at SpawnOffset distance away from the player. The object is a 
@@ -22,11 +21,8 @@ public class PositionPrefabRelative : MonoBehaviour
 
     public GameObject PositionPrefabAtRelativePosition()
     {
-       
-        
-        Instantiate(Prefab, this.transform.position - SpawnOffset, Quaternion.identity);
-        
-        return Prefab;
+  
+        return Instantiate(Prefab, this.transform.position + SpawnOffset, Quaternion.identity); 
     }
     
 }
