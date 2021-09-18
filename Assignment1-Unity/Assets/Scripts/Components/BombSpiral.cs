@@ -32,7 +32,7 @@ public class BombSpiral : MonoBehaviour
         
         for (int i = 0; i < BombCount; i++)
         {
-            point = (new Vector3( Mathf.Cos(degrees * Mathf.Deg2Rad), Mathf.Sin(degrees * Mathf.Deg2Rad))  * radius) + playerPos;
+            point = (new Vector3(Mathf.Cos(degrees * Mathf.Deg2Rad), Mathf.Sin(degrees * Mathf.Deg2Rad))  * radius) + playerPos;
             
             radius += ((EndRadius-StartRadius)/BombCount);
             
