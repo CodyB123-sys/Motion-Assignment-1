@@ -6,8 +6,8 @@ public class PowerUps : MonoBehaviour
     public GameObject PowerUpPrefab;
     public int PowerUpCount = 3;
     public float PowerUpRadius = 1;
-    public float degrees = 0;
-    public Vector3 point;
+    float degrees = 0;
+    Vector3 point;
     Vector3 playerPos;
 
     /// <summary>

@@ -351,6 +351,11 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 240721822}
+    - target: {fileID: 114675886821620292, guid: abc125f00ae369940b2c5c0275186637,
+        type: 3}
+      propertyPath: SpiralAngleInDegrees
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 114781344595955292, guid: abc125f00ae369940b2c5c0275186637,
         type: 3}
       propertyPath: SpawnOffset.x

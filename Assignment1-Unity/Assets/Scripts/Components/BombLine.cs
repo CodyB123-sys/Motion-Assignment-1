@@ -8,6 +8,8 @@ public class BombLine : MonoBehaviour
     public int BombCount;
     public float BombSpacing;
 
+    
+
     /// <summary>
     /// Spawn a line of instantiated BombPrefabs behind the player ship. There should be BombCount bombs placed with BombSpacing amount of space between them.
     /// </summary>
