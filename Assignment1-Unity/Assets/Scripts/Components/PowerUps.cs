@@ -22,7 +22,7 @@ public class PowerUps : MonoBehaviour
 
         for (int i = 0; i < PowerUpCount; i++)
         {
-            point = new Vector3(playerPos.x + Mathf.Cos(degrees * Mathf.Deg2Rad), playerPos.y + Mathf.Sin(degrees * Mathf.Deg2Rad)) * PowerUpRadius;
+            point = (new Vector3(Mathf.Cos(degrees * Mathf.Deg2Rad), Mathf.Sin(degrees * Mathf.Deg2Rad)) * PowerUpRadius) + playerPos;
             GameObject spawnedPowerUp;
             spawnedPowerUp = Instantiate(PowerUpPrefab, point, Quaternion.identity);
             powerUps[i] = spawnedPowerUp;

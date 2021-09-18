@@ -9,10 +9,8 @@ public class BombSpiral : MonoBehaviour
     public int BombCount = 10;
     public float StartRadius = 1;
     public float EndRadius = 3;
-    float radius;
-    float degrees = 0;
-    Vector3 point;
-    Vector3 playerPos;
+    
+    
 
 
 
@@ -24,14 +22,19 @@ public class BombSpiral : MonoBehaviour
     /// <returns>An array of the spawned bombs</returns>
     public GameObject[] SpawnBombSpiral()
     {
+        float radius;
+        float degrees = 0;
+        Vector3 point;
+        Vector3 playerPos;
         GameObject[] bombs = new GameObject[BombCount];
         playerPos = this.transform.position;
         radius = StartRadius;
         
         for (int i = 0; i < BombCount; i++)
         {
-            point = new Vector3(playerPos.x + Mathf.Cos(degrees * Mathf.Deg2Rad), playerPos.y + Mathf.Sin(degrees * Mathf.Deg2Rad))  * (radius * Mathf.Lerp(StartRadius, EndRadius, 0.2f));
-
+            point = (new Vector3( Mathf.Cos(degrees * Mathf.Deg2Rad), Mathf.Sin(degrees * Mathf.Deg2Rad))  * radius) + playerPos;
+            
+            radius += ((EndRadius-StartRadius)/BombCount);
             
 
             degrees += SpiralAngleInDegrees;
