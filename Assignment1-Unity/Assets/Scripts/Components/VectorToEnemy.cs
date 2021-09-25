@@ -5,10 +5,10 @@ public class VectorToEnemy : MonoBehaviour
 {
 
 
-    public GameObject enemy;
+    
     Vector3 playerPos;
     Vector3 enemyPos;
-    Vector3 dist;
+    public Vector3 vectorToEnemy;
     float xDist;
     float yDist;
     float distance;
@@ -25,12 +25,14 @@ public class VectorToEnemy : MonoBehaviour
     {
         enemyPos = GameController.GetEnemyObject().transform.position;
         playerPos = this.transform.position; 
-        enemyPos = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z);
+        //enemyPos = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z);
         
         Debug.DrawLine(enemyPos, playerPos, Color.red, 2.5f);
-        Debug.Log(dist);
+        //Debug.Log(vectorToEnemy);
+
         
-            return dist = playerPos - enemyPos;
+        
+            return vectorToEnemy = playerPos - enemyPos;
         
         
     }
@@ -42,13 +44,19 @@ public class VectorToEnemy : MonoBehaviour
     /// <returns>The scalar distance between the player and the enemy</returns>
     public float GetDistanceToEnemy()
     {
+        enemyPos = GameController.GetEnemyObject().transform.position;
+        playerPos = this.transform.position;
+
         xDist = playerPos.x - enemyPos.x;
         yDist = playerPos.y - enemyPos.y;
-        
-        Debug.Log(distance);
 
+        distance = Mathf.Sqrt((xDist * xDist) + (yDist * yDist));
+        //Debug.Log(distance);
+
+
+
+        return distance;
         
-        return distance = Mathf.Sqrt((xDist * xDist) + (yDist * yDist));
     }
     
 }

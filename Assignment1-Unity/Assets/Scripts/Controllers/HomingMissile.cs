@@ -5,6 +5,7 @@ public class HomingMissile : MonoBehaviour
 {
     public float ForwardSpeed = 1;
     public float RotateSpeedInDeg = 45;
+    Vector3 enemyToPlayer;
     
     
 
@@ -14,9 +15,13 @@ public class HomingMissile : MonoBehaviour
     {
         GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
         Vector3 enemyPos;
-        enemyPos = enemy.transform.position;
-        Vector3 targetDir = enemyPos - this.transform.position;
-        
+        enemyPos = transform.InverseTransformDirection(enemy.transform.position);
+
+        Vector3 playerEnemy = Vector3.Scale(this.transform.position, enemyPos);
+
+        //float angleCos = Mathf.Acos(playerEnemy);
+
+        //enemyToPlayer = this.transform.position - enemyPos;
         
         
         
@@ -30,7 +35,10 @@ public class HomingMissile : MonoBehaviour
             
         }*/
 
-            float angle = Vector3.Angle(targetDir, Vector3.up);
+            
+
+            float angle = Mathf.Atan2(this.transform.position.y - enemyPos.y, this.transform.position.x - enemyPos.x) * Mathf.Rad2Deg;
+            
 
         
        
