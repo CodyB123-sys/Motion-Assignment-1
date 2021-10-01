@@ -18,20 +18,15 @@ public class ShipMotor : MonoBehaviour
     /// <param name="input">The input from the player. The possible range of values for x and y are from -1 to 1.</param>
     /// 
 
-    void Update()
-    {
-        Vector2 playerInput;
-        playerInput.x = Input.GetAxisRaw("Horizontal");
-        playerInput.y = Input.GetAxisRaw("Vertical");
-        HandleMovementInput(playerInput);
-
-        Debug.Log(speed);
-    }
+    
 
     public void HandleMovementInput( Vector2 input )
     {
         AccelerationRate = MaxSpeed / AccelerationTime;
         DecelerationRate = MaxSpeed / DecelerationTime;
+
+        input.x = Input.GetAxisRaw("Horizontal");
+        input.y = Input.GetAxisRaw("Vertical");
 
         if (input.x != 0 || input.y != 0)
         {
@@ -46,6 +41,8 @@ public class ShipMotor : MonoBehaviour
         move = move.normalized * speed * Time.deltaTime;
 
         transform.Translate(move);
+
+        //Debug.Log(speed);
     }
     
 }
