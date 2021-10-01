@@ -13,8 +13,9 @@ public class HomingMissile : MonoBehaviour
     // Do not use the RotateTowards or LookAt methods.
     void Update()
     {
-        GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
-  
+        GameObject enemy = GameController.GetEnemyObject();
+
+
         Vector3 enemyPos;
         enemyPos = enemy.transform.position;
 
@@ -29,7 +30,7 @@ public class HomingMissile : MonoBehaviour
         
         missileToEnemyDot = Vector3.Dot(this.transform.right, missileToEnemy);
 
-        Debug.Log(missileToEnemyDot);
+        //Debug.Log(missileToEnemyDot);
         
         transform.Translate(Vector3.up * ForwardSpeed * Time.deltaTime);
         transform.Rotate(0, 0, (RotateSpeedInDeg * Time.deltaTime) * -missileToEnemyDot);
