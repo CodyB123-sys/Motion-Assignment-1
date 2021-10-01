@@ -10,7 +10,11 @@ public class ShipMotor : MonoBehaviour
     public float MaxSpeed = 1;
     float speed;
 
+   
+
     Vector3 move;
+
+   
 
     /// <summary>
     /// Move the ship using it's transform only based on the current input vector. Do not use rigid bodies.
@@ -22,11 +26,11 @@ public class ShipMotor : MonoBehaviour
 
     public void HandleMovementInput( Vector2 input )
     {
+        
         AccelerationRate = MaxSpeed / AccelerationTime;
         DecelerationRate = MaxSpeed / DecelerationTime;
 
-        input.x = Input.GetAxisRaw("Horizontal");
-        input.y = Input.GetAxisRaw("Vertical");
+        
 
         if (input.x != 0 || input.y != 0)
         {
