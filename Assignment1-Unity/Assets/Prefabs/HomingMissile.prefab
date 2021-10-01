@@ -45,8 +45,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ForwardSpeed: 1
-  RotateSpeedInDeg: 45
-  vector: {fileID: 114540942626424086, guid: abc125f00ae369940b2c5c0275186637, type: 3}
+  RotateSpeedInDeg: 70
 --- !u!1 &1819074805867038
 GameObject:
   m_ObjectHideFlags: 0

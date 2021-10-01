@@ -28,11 +28,11 @@ public class VectorToEnemy : MonoBehaviour
         //enemyPos = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z);
         
         Debug.DrawLine(enemyPos, playerPos, Color.red, 2.5f);
-        //Debug.Log(vectorToEnemy);
+        Debug.Log(vectorToEnemy);
 
         
         
-            return vectorToEnemy = playerPos - enemyPos;
+            return vectorToEnemy = enemyPos - playerPos;
         
         
     }
@@ -47,8 +47,8 @@ public class VectorToEnemy : MonoBehaviour
         enemyPos = GameController.GetEnemyObject().transform.position;
         playerPos = this.transform.position;
 
-        xDist = playerPos.x - enemyPos.x;
-        yDist = playerPos.y - enemyPos.y;
+        xDist = enemyPos.x - playerPos.x;
+        yDist = enemyPos.y - playerPos.y;
 
         distance = Mathf.Sqrt((xDist * xDist) + (yDist * yDist));
         //Debug.Log(distance);

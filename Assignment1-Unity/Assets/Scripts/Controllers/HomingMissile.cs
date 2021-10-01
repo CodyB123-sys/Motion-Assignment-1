@@ -5,45 +5,38 @@ public class HomingMissile : MonoBehaviour
 {
     public float ForwardSpeed = 1;
     public float RotateSpeedInDeg = 45;
-    Vector3 enemyToPlayer;
-    
+    Vector3 missileToEnemy;
+    float missileToEnemyDot;
     
 
     // In Update, you should rotate and move the missile to rotate it towards the player.  It should move forward with ForwardSpeed and rotate at RotateSpeedInDeg.
     // Do not use the RotateTowards or LookAt methods.
     void Update()
     {
+        //getting the enemy component
         GameObject enemy = GameObject.FindGameObjectWithTag("Enemy");
+        
+        //getting the enemy's vector position
         Vector3 enemyPos;
-        enemyPos = transform.InverseTransformDirection(enemy.transform.position);
+        enemyPos = enemy.transform.position;
 
-        Vector3 playerEnemy = Vector3.Scale(this.transform.position, enemyPos);
-
-        //float angleCos = Mathf.Acos(playerEnemy);
-
-        //enemyToPlayer = this.transform.position - enemyPos;
+        //calculating the vector between the enemy and the missile
+        missileToEnemy = enemyPos - this.transform.position;
         
-        
-        
-        /*if (this.transform.position.x > enemyPos.x && this.transform.position.y > enemyPos.y)
-        {
-            targetDir.x = this.transform.position.x - enemyPos.x;
-            targetDir.y = this.transform.position.y - enemyPos.y;
-        }
-        else if (this.transform.position.x > enemyPos.x && this.transform.position.y > enemyPos.y)
-        { 
-            
-        }*/
+        //normalizing the vector to avoid getting strange results
+        missileToEnemy = Vector3.Normalize(missileToEnemy);
 
-            
 
-            float angle = Mathf.Atan2(this.transform.position.y - enemyPos.y, this.transform.position.x - enemyPos.x) * Mathf.Rad2Deg;
-            
+        //Debug.DrawRay(this.transform.position, missileToEnemy, Color.white);
+        //Debug.DrawRay(this.transform.position, this.transform.right, Color.white);
 
+        //
+        missileToEnemyDot = Vector3.Dot(this.transform.right, missileToEnemy);
+
+        Debug.Log(missileToEnemyDot);
         
-       
         transform.Translate(Vector3.up * ForwardSpeed * Time.deltaTime);
-        transform.Rotate(0, angle, 0);
+        transform.Rotate(0, 0, (RotateSpeedInDeg * Time.deltaTime) * -missileToEnemyDot);
         
         
     }

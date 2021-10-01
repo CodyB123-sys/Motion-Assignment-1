@@ -34,7 +34,7 @@ public class VisionCone : MonoBehaviour
         
 
         float enemyAngle = Mathf.Atan2(this.transform.up.y, this.transform.up.x) * Mathf.Rad2Deg;
-        float enemyToPlayerAngle = Mathf.Atan2(vectorToEnemyScript.GetVectorToEnemy().y, vectorToEnemyScript.GetVectorToEnemy().x) * Mathf.Rad2Deg;
+        float enemyToPlayerAngle = Mathf.Atan2(-vectorToEnemyScript.GetVectorToEnemy().y, -vectorToEnemyScript.GetVectorToEnemy().x) * Mathf.Rad2Deg;
         point1 = (new Vector3(Mathf.Cos((enemyAngle + (AngleSweepInDegrees/2)) * Mathf.Deg2Rad), Mathf.Sin((enemyAngle + (AngleSweepInDegrees/2)) * Mathf.Deg2Rad)) * ViewDistance) + enemyPos;
         point2 = (new Vector3(Mathf.Cos((enemyAngle - (AngleSweepInDegrees/2)) * Mathf.Deg2Rad), Mathf.Sin((enemyAngle - (AngleSweepInDegrees/2)) * Mathf.Deg2Rad)) * ViewDistance) + enemyPos;
 
