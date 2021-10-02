@@ -46,7 +46,7 @@ public class ShipMotor : MonoBehaviour
 
         transform.Translate(move);
 
-        //Debug.Log(speed);
+        Debug.Log(speed);
     }
     
 }
