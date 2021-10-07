@@ -24,7 +24,7 @@ public class VisionCone : MonoBehaviour
 
     void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameController.GetPlayerObject();
         vectorToEnemyScript = player.GetComponent<VectorToEnemy>();
     }
 
@@ -50,11 +50,11 @@ public class VisionCone : MonoBehaviour
 
         if (enemyToPlayerAngle >= (enemyAngle - (AngleSweepInDegrees/2)) && enemyToPlayerAngle <= (enemyAngle + (AngleSweepInDegrees/2)) && vectorToEnemyScript.GetDistanceToEnemy() <= ViewDistance)
         {
-            Debug.Log("Player is in cone");
+            //Debug.Log("Player is in cone");
             return true;
         }
         else {
-            Debug.Log("Player is not in cone");
+            //Debug.Log("Player is not in cone");
             return false;
         }
 

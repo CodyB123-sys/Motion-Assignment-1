@@ -25,10 +25,9 @@ public class VectorToEnemy : MonoBehaviour
     {
         enemyPos = GameController.GetEnemyObject().transform.position;
         playerPos = this.transform.position; 
-        //enemyPos = new Vector3(enemy.transform.position.x, enemy.transform.position.y, enemy.transform.position.z);
         
-        Debug.DrawLine(enemyPos, playerPos, Color.red, 2.5f);
-        Debug.Log(vectorToEnemy);
+        //Debug.DrawLine(enemyPos, playerPos, Color.red, 2.5f);
+        //Debug.Log(vectorToEnemy);
 
         
         

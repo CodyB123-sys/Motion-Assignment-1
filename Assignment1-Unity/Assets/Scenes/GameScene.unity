@@ -324,11 +324,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4408196811525658, guid: abc125f00ae369940b2c5c0275186637, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.54
+      value: 1.99
       objectReference: {fileID: 0}
     - target: {fileID: 4408196811525658, guid: abc125f00ae369940b2c5c0275186637, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -5.15
+      value: -2.8
       objectReference: {fileID: 0}
     - target: {fileID: 4408196811525658, guid: abc125f00ae369940b2c5c0275186637, type: 3}
       propertyPath: m_LocalPosition.z
@@ -409,6 +409,11 @@ PrefabInstance:
         type: 3}
       propertyPath: SpawnOffset.z
       value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 114852366303261144, guid: abc125f00ae369940b2c5c0275186637,
+        type: 3}
+      propertyPath: BombCount
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 114852366303261144, guid: abc125f00ae369940b2c5c0275186637,
         type: 3}

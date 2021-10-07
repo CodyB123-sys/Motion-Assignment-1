@@ -22,7 +22,7 @@ public class BombLine : MonoBehaviour
             GameObject spawnedBomb;
             spawnedBomb = Instantiate(BombPrefab, this.transform.position - (transform.up * ((i + 1) * BombSpacing)), Quaternion.identity);
             bombs[i] = spawnedBomb;
-            Debug.Log(bombs[i].name);
+            //Debug.Log(bombs[i].name);
         }
         return bombs;
     }

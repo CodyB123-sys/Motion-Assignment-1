@@ -9,6 +9,7 @@ public class ShipMotor : MonoBehaviour
     float DecelerationRate;
     public float MaxSpeed = 1;
     float speed;
+    
 
    
 
@@ -26,11 +27,10 @@ public class ShipMotor : MonoBehaviour
 
     public void HandleMovementInput( Vector2 input )
     {
-        
         AccelerationRate = MaxSpeed / AccelerationTime;
         DecelerationRate = MaxSpeed / DecelerationTime;
 
-        
+        input = GameController.GetCamera().transform.TransformDirection(input);
 
         if (input.x != 0 || input.y != 0)
         {
@@ -44,9 +44,12 @@ public class ShipMotor : MonoBehaviour
 
         move = move.normalized * speed * Time.deltaTime;
 
-        transform.Translate(move);
+       
 
-        Debug.Log(speed);
+        transform.Translate(move);
+       
+
+        //Debug.Log(speed);
     }
     
 }
