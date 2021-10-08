@@ -41,12 +41,12 @@ public class VisionCone : MonoBehaviour
 
         
 
-        //Debug.Log("this is enemy to player angle " + enemyToPlayerAngle);
-        //Debug.Log("This is the enemy angle " + enemyAngle);
-        //Debug.Log(vectorToEnemyScript.GetDistanceToEnemy());
-        //Debug.Log("this is point1 " + point1);
-        //Debug.DrawLine(enemyPos, point1, Color.white, 100f);
-        //Debug.DrawLine(enemyPos, point2, Color.white, 100f);
+        Debug.Log("this is enemy to player angle " + enemyToPlayerAngle);
+        Debug.Log("This is the enemy angle " + enemyAngle);
+        Debug.Log(vectorToEnemyScript.GetDistanceToEnemy());
+        Debug.Log("this is point1 " + point1);
+        Debug.DrawLine(enemyPos, point1, Color.white, 100f);
+        Debug.DrawLine(enemyPos, point2, Color.white, 100f);
 
         if (enemyToPlayerAngle >= (enemyAngle - (AngleSweepInDegrees/2)) && enemyToPlayerAngle <= (enemyAngle + (AngleSweepInDegrees/2)) && vectorToEnemyScript.GetDistanceToEnemy() <= ViewDistance)
         {
